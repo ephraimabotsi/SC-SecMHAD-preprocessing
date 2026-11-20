@@ -1,22 +1,3 @@
-#!/usr/bin/env python3
-"""Rebuild the SC-SecMHAD benchmark from the raw SR-BH 2020 file.
-
-Usage (from the repository root):
-    python scripts/rebuild.py                      # full pipeline S0 to S8, then validation
-    python scripts/rebuild.py --from-partitions    # rebuild the splits from the published partition IDs
-    python scripts/rebuild.py --config path/to/config.yaml --strict
-
-Outputs:
-    data/processed/{train,val,test}.csv               text, label, label_encoded, raw_row
-    data/partitions/partition_ids.csv                 raw_row, partition, label, label_encoded, text_sha1_16
-    outputs/statistics/stage_counts.csv               records after each stage (Table 4)
-    outputs/statistics/class_distribution.csv         records per class and partition (Table 3, Fig. 2)
-    outputs/statistics/preprocessing_notes.json       every count quoted in Section 3.6
-    outputs/statistics/paper_comparison.{csv,md}      paper value, generated value, difference, status
-    outputs/statistics/integrity_checks.csv           leakage, duplicates, labels, ID consistency
-    outputs/statistics/output_checksums.json          MD5 of every generated file (run-to-run check)
-    outputs/audit/s5_precision_audit_sample.csv       S5 removed records to check by hand
-"""
 from __future__ import annotations
 
 import argparse
@@ -28,11 +9,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
-import pandas as pd  # noqa: E402
+import pandas as pd
 
-from srbh_prep import __version__  # noqa: E402
-from srbh_prep import audit, partitioning, preprocessing, validation  # noqa: E402
-from srbh_prep.utilities import LOG, load_config, md5sum, setup_logging, write_csv, write_json  # noqa: E402
+from srbh_prep import __version__
+from srbh_prep import audit, partitioning, preprocessing, validation
+from srbh_prep.utilities import LOG, load_config, md5sum, setup_logging, write_csv, write_json
 
 
 def class_distribution(frames: dict, class_names: list[str]) -> pd.DataFrame:
@@ -121,7 +102,6 @@ def main(argv=None) -> int:
     write_csv(sample, P["audit_dir"] / "s5_precision_audit_sample.csv")
     LOG.info("S5 precision-audit sample: %d of %d removed records (seed %d)", len(sample), len(removed), a["seed"])
 
-    # validation reads the files back from disk
     disk = {n: pd.read_csv(P["processed_dir"] / ("%s.csv" % n), keep_default_na=False) for n in partitioning.PARTITIONS}
     disk_table = pd.read_csv(P["partitions_dir"] / "partition_ids.csv")
     checks = validation.integrity_checks(disk, disk_table, names)

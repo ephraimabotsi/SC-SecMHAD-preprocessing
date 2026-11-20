@@ -1,9 +1,3 @@
-"""Stage S8: stratified train / validation / test split and the partition-ID table.
-
-Partition IDs identify each record by `raw_row`, its 0-based row number in the
-released SR-BH 2020 file. A short SHA-1 of the input string sits beside it, so a
-user can check that the same raw file and the same input string were used.
-"""
 from __future__ import annotations
 
 import numpy as np
@@ -16,7 +10,6 @@ PARTITIONS = ("train", "val", "test")
 
 
 def split(df: pd.DataFrame, seed: int, test_fraction: float, val_fraction_of_rest: float) -> dict:
-    """Two stratified splits with one seed: test first, then validation from the rest."""
     idx = np.arange(len(df))
     y = df["label_encoded"].values
     pool, test = train_test_split(idx, test_size=test_fraction, stratify=y, random_state=seed)
@@ -25,8 +18,6 @@ def split(df: pd.DataFrame, seed: int, test_fraction: float, val_fraction_of_res
 
 
 def partition_table(df: pd.DataFrame, parts: dict) -> pd.DataFrame:
-    """One row per final record: raw_row, partition, label, label_encoded, text_sha1_16.
-    Rows keep the order in which the split returns them."""
     rows = []
     out = df.reset_index(drop=True)
     for name in PARTITIONS:
@@ -44,8 +35,6 @@ def partition_frames(df: pd.DataFrame, parts: dict) -> dict:
 
 
 def apply_partition_ids(raw_csv_frame: pd.DataFrame, table: pd.DataFrame, text_builder) -> dict:
-    """Rebuild the three partitions straight from the published partition IDs, without rerunning
-    S1 to S8. `text_builder` must be preprocessing.build_input_string."""
     sub = raw_csv_frame.set_index("raw_row").loc[table["raw_row"]].reset_index()
     text, _ = text_builder(sub)
     sub = sub.assign(text=text.values)

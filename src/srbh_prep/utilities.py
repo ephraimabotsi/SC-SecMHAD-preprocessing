@@ -1,4 +1,3 @@
-"""Configuration loading, logging, hashing and atomic file output."""
 from __future__ import annotations
 
 import hashlib
@@ -17,7 +16,6 @@ def setup_logging(level: int = logging.INFO) -> None:
 
 
 def load_config(path: str | os.PathLike, root: str | os.PathLike | None = None) -> dict:
-    """Read config.yaml and resolve every entry under `paths` against the repository root."""
     path = Path(path)
     if not path.exists():
         raise FileNotFoundError("Configuration file not found: %s" % path)
@@ -38,12 +36,10 @@ def md5sum(path: str | os.PathLike, chunk: int = 1 << 20) -> str:
 
 
 def text_hash(text: str) -> str:
-    """Short, stable fingerprint of an input string, stored beside each partition ID."""
     return hashlib.sha1(text.encode("utf-8")).hexdigest()[:16]
 
 
 def atomic_write(path: str | os.PathLike, write) -> None:
-    """Write to a temporary file, then rename, so an interrupted run never leaves a half file."""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_name(path.name + ".part")

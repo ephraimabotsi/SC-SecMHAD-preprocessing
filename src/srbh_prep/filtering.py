@@ -1,10 +1,3 @@
-"""Stage S5 label-noise filter: payload signatures (Appendix A of the paper).
-
-A record labeled Normal whose twice URL-decoded input string matches a CORE
-signature carries an attack payload, which contradicts its label, so S5 removes it.
-PROBE signatures mark scanner probes outside the nine classes. They are reported
-but kept in Normal (paper setting, mode "core").
-"""
 from __future__ import annotations
 
 import re
@@ -33,7 +26,6 @@ def decode_twice(text: str) -> str:
 
 
 def payload_type(text: str, which: str = "core") -> str | None:
-    """Name of the first matching signature group, checked in the order above, or None."""
     decoded = decode_twice(text)
     groups = {"core": _CORE, "probe": _PROBE, "all": _CORE + _PROBE}[which]
     for name, rx in groups:

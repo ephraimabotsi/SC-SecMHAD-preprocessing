@@ -1,22 +1,15 @@
-# Preprocessing configuration for the SC-SecMHAD SR-BH 2020 benchmark.
-# Every value below is reported in Section 3.6 and Table 4 of the paper.
-# Paths are relative to the repository root unless absolute.
-
 paths:
-  raw_csv: data/raw/data_capec_multilabel.csv   # SR-BH 2020 release file (not redistributed)
-  processed_dir: data/processed                 # train.csv, val.csv, test.csv
-  partitions_dir: data/partitions               # partition IDs (committed to the repository)
-  statistics_dir: outputs/statistics            # stage counts, class counts, comparison report
-  audit_dir: outputs/audit                      # S5 precision-audit sample for manual review
+  raw_csv: data/raw/data_capec_multilabel.csv
+  processed_dir: data/processed
+  partitions_dir: data/partitions
+  statistics_dir: outputs/statistics
+  audit_dir: outputs/audit
 
 source:
-  # MD5 of the SR-BH 2020 file used in the paper. A different file gives a warning.
   expected_md5: 173ec515308bdce5aec19cfd5b792596
   expected_records: 907815
 
 labels:
-  # SR-BH label column -> final class. The order of this list is the S4 priority
-  # (first retained column in the file's own column order wins).
   capec_to_class:
     "000 - Normal": Normal
     "272 - Protocol Manipulation": HTTP Protocol Manipulation
@@ -28,12 +21,12 @@ labels:
     "274 - HTTP Verb Tampering": HTTP Protocol Manipulation
     "194 - Fake the Source of Data": Fake the Source of Data
     "34 - HTTP Response Splitting": HTTP Response Splitting
-  excluded_columns:   # dropped at S1 when they are a record's only labels
+  excluded_columns:
     - "16 - Dictionary-based Password Attack"
     - "153 - Input Data Manipulation"
     - "248 - Command Injection"
     - "33 - HTTP Request Smuggling"
-  class_names:        # label_encoded = position in this list
+  class_names:
     - Normal
     - HTTP Protocol Manipulation
     - Path Traversal
@@ -45,23 +38,23 @@ labels:
     - HTTP Response Splitting
 
 input_string:
-  fields: [request_http_method, request_http_request, request_body]   # headers and responses excluded
+  fields: [request_http_method, request_http_request, request_body]
   include_body: true
 
-noise_filter:          # stage S5
-  mode: core           # core = remove Normal records carrying a core payload signature (paper setting)
+noise_filter:
+  mode: core
 
-caps:                  # stage S7
+caps:
   seed: 42
   per_class:
     Normal: 52000
     SQL Injection: 42000
 
-split:                 # stage S8
+split:
   seed: 42
   test_fraction: 0.15
   validation_fraction_of_rest: 0.15
 
-precision_audit:       # manual check of the S5 filter precision (Section 3.6)
-  sample_size: 200     # records checked by hand (Section 3.6)
+precision_audit:
+  sample_size: 200
   seed: 42

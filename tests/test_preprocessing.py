@@ -1,8 +1,3 @@
-"""Automated tests. Unit tests run anywhere. Integration tests run only when the raw
-SR-BH 2020 file is present at the configured path, and they are skipped otherwise.
-
-    python -m pytest -q
-"""
 import json
 import sys
 from pathlib import Path
@@ -14,15 +9,14 @@ import pytest
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
-from srbh_prep import audit, filtering, partitioning, preprocessing, validation  # noqa: E402
-from srbh_prep.utilities import load_config, md5sum, text_hash  # noqa: E402
+from srbh_prep import audit, filtering, partitioning, preprocessing, validation
+from srbh_prep.utilities import load_config, md5sum, text_hash
 
 CFG = load_config(ROOT / "configs" / "config.yaml", ROOT)
 RAW = Path(CFG["paths"]["raw_csv"])
 needs_raw = pytest.mark.skipif(not RAW.exists(), reason="raw SR-BH 2020 file not present")
 
 
-# ---------------------------------------------------------------- unit tests
 @pytest.mark.parametrize("text,expected", [
     ("GET /index.php?q=1%3B%20cat%20/etc/passwd", "OS command"),
     ("GET /x?id=1%20UNION%20SELECT%20pass%20FROM%20users", "SQL"),
@@ -76,7 +70,6 @@ def test_config_values_match_paper_setting():
     assert len(CFG["labels"]["class_names"]) == 9
 
 
-# ---------------------------------------------------------------- integration tests (raw data needed)
 @pytest.fixture(scope="module")
 def built():
     final, log, notes, removed, _ = preprocessing.run_stages(CFG)

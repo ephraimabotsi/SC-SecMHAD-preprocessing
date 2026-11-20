@@ -1,4 +1,3 @@
-"""Integrity checks on the generated files and the paper-versus-code comparison."""
 from __future__ import annotations
 
 import pandas as pd
@@ -7,7 +6,6 @@ from .utilities import LOG
 
 
 def integrity_checks(frames: dict, table: pd.DataFrame, class_names: list[str]) -> list[dict]:
-    """Checks run on the written partitions, not on in-memory summaries."""
     out = []
 
     def add(name, ok, detail):

@@ -1,11 +1,3 @@
-"""Manual precision audit of the S5 label-noise filter.
-
-The filter's precision is estimated by hand: draw a random sample of the records
-S5 removed, mark each one by inspection as carrying an attack payload or not, and
-report the share that does, with a Wilson 95% interval. The sample size is set in
-configs/config.yaml (precision_audit.sample_size, 200 as in the paper). The audit
-only reads the removed records. It never changes which records are removed.
-"""
 from __future__ import annotations
 
 import math
@@ -14,7 +6,7 @@ import pandas as pd
 
 from .filtering import decode_twice
 
-AUDIT_COLUMN = "attack_payload_present"   # reviewer fills in yes or no
+AUDIT_COLUMN = "attack_payload_present"
 
 
 def draw_sample(removed: pd.DataFrame, size: int, seed: int) -> pd.DataFrame:
@@ -37,7 +29,6 @@ def wilson_interval(successes: int, n: int, z: float = 1.959963984540054) -> tup
 
 
 def score(sheet: pd.DataFrame) -> dict:
-    """Precision and Wilson 95% interval from a completed audit sheet."""
     marks = sheet[AUDIT_COLUMN].astype(str).str.strip().str.lower()
     if not marks.isin(["yes", "no"]).all():
         bad = sheet.loc[~marks.isin(["yes", "no"]), "audit_id"].tolist()
