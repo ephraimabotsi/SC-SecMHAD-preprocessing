@@ -1,5 +1,7 @@
 # SC-SecMHAD preprocessing: SR-BH 2020 benchmark rebuild
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24396092.svg)](https://doi.org/10.5281/zenodo.24396092)
+
 This repository rebuilds the nine-class SR-BH 2020 benchmark used in
 
 > E. Abotsi, O. Kornyo, S. Alhassan, S. A. Muntaka, A. R. Owusu, J. M. Mensah, M. Asante.
@@ -301,8 +303,13 @@ published partition IDs exactly.
 
 ## 14. Citation
 
-If you use this code or the partition IDs, cite the paper above and this software (see
-`CITATION.cff`). Cite the dataset as:
+If you use this code or the partition IDs, cite the paper above and this software:
+
+> E. Abotsi, O. Kornyo, S. Alhassan, S. A. Muntaka, A. R. Owusu, J. M. Mensah, M. Asante.
+> SC-SecMHAD preprocessing: SR-BH 2020 benchmark rebuild (v1.0.0) [software]. Zenodo, 2026.
+> <https://doi.org/10.5281/zenodo.24396092>
+
+Citation metadata is also in `CITATION.cff`. Cite the dataset as:
 
 > T. Sureda Riera, J. R. Bermejo Higuera, J. Bermejo Higuera, J. A. Sicilia Montalvo,
 > J. J. Martínez Herráiz. SR-BH 2020 multi-label dataset [dataset]. Harvard Dataverse, 2022.
