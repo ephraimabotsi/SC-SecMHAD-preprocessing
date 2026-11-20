@@ -138,7 +138,7 @@ this repository. The partition IDs refer to raw row numbers only.
 ## 5. Installation
 
 ```bash
-git clone https://github.com/<account>/SC-SecMHAD-preprocessing.git
+git clone https://github.com/ephraimabotsi/SC-SecMHAD-preprocessing.git
 cd SC-SecMHAD-preprocessing
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
