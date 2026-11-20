@@ -1,0 +1,74 @@
+cff-version: 1.2.0
+message: "If you use this software or its partition IDs, please cite it and the associated paper."
+title: "SC-SecMHAD preprocessing: SR-BH 2020 benchmark rebuild"
+version: 1.0.0
+date-released: 2026-11-20
+license: MIT
+type: software
+authors:
+  - family-names: Abotsi
+    given-names: Ephraim
+    affiliation: "Kwame Nkrumah University of Science and Technology"
+  - family-names: Kornyo
+    given-names: Oliver
+    affiliation: "Kwame Nkrumah University of Science and Technology"
+  - family-names: Alhassan
+    given-names: Seiba
+    affiliation: "Dr Hilla Limann Technical University"
+  - family-names: Muntaka
+    given-names: Siddique Abubakr
+    affiliation: "University of Cincinnati"
+  - family-names: Owusu
+    given-names: Agyei Richmond
+    affiliation: "Kwame Nkrumah University of Science and Technology"
+  - family-names: Mensah
+    given-names: Joseph Mawulorm
+    affiliation: "Kwame Nkrumah University of Science and Technology"
+  - family-names: Asante
+    given-names: Michael
+    affiliation: "Kwame Nkrumah University of Science and Technology"
+keywords:
+  - web attack detection
+  - HTTP
+  - SR-BH 2020
+  - dataset preprocessing
+  - reproducibility
+references:
+  - type: dataset
+    title: "SR-BH 2020 multi-label dataset"
+    authors:
+      - family-names: Sureda Riera
+        given-names: Tomás
+      - family-names: Bermejo Higuera
+        given-names: Juan Ramón
+      - family-names: Bermejo Higuera
+        given-names: Javier
+      - family-names: Sicilia Montalvo
+        given-names: Juan Antonio
+      - family-names: Martínez Herráiz
+        given-names: José Javier
+    doi: 10.7910/DVN/OGOIXX
+    publisher:
+      name: Harvard Dataverse
+    year: 2022
+preferred-citation:
+  type: article
+  title: "SC-SecMHAD: Supervised Contrastive Learning with SecBERT for Fine-Grained Multi-Class HTTP Attack Detection"
+  authors:
+    - family-names: Abotsi
+      given-names: Ephraim
+    - family-names: Kornyo
+      given-names: Oliver
+    - family-names: Alhassan
+      given-names: Seiba
+    - family-names: Muntaka
+      given-names: Siddique Abubakr
+    - family-names: Owusu
+      given-names: Agyei Richmond
+    - family-names: Mensah
+      given-names: Joseph Mawulorm
+    - family-names: Asante
+      given-names: Michael
+  journal: "Computer Networks"
+  status: submitted
+  year: 2026

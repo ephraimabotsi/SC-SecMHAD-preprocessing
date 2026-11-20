@@ -1,0 +1,11 @@
+check,passed,detail
+No missing input strings,True,
+No missing labels,True,
+Labels are the nine configured classes,True,"['Code Injection', 'Fake the Source of Data', 'HTTP Protocol Manipulation', 'HTTP Response Splitting', 'Normal', 'OS Command Injection', 'Path Traversal', 'SQL Injection', 'Scanning for Vulnerable Software']"
+label_encoded matches class order,True,
+Each raw_row appears once,True,195883 records
+Each input string appears once (no exact duplicates),True,
+No input string shared by train and val (leakage),True,0 shared
+No input string shared by train and test (leakage),True,0 shared
+No input string shared by val and test (leakage),True,0 shared
+Partition-ID table matches the written partitions,True,195883 IDs

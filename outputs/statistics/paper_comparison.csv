@@ -1,0 +1,70 @@
+metric,paper,generated,difference,status,where_in_paper
+Records after S0,907815,907815,0,Match,Table 4
+Records after S1,905506,905506,0,Match,Table 4
+Records after S2,905506,905506,0,Match,Table 4
+Records after S3,378051,378051,0,Match,Table 4
+Records after S4,378051,378051,0,Match,Table 4
+Records after S5,347922,347922,0,Match,Table 4
+Records after S6,345743,345743,0,Match,Table 4
+Records after S7,195883,195883,0,Match,Table 4
+Records removed at S1,2309,2309,0,Match,"Table 4, Section 3.6 S1"
+Records removed at S3,527455,527455,0,Match,Table 4
+Records removed at S5,30129,30129,0,Match,"Table 4, Section 3.6 S5"
+Records removed at S6,2179,2179,0,Match,Table 4
+Records removed at S7,149860,149860,0,Match,Table 4
+S2_records_with_body,24434,24434,0,Match,Section 3.6 S2
+S4_records_with_more_than_one_retained_label,6270,6270,0,Match,Section 3.6 S4
+S4_records_spanning_two_or_more_final_classes,5351,5351,0,Match,Section 3.6 S4
+S4_records_pairing_normal_with_attack,0,0,0,Match,Section 3.6 S4
+raw_normal_records,525195,525195,0,Match,"Section 3.6 S5, Table 3"
+raw_normal_records_with_payload,39650,39650,0,Match,Section 3.6 S5
+payload_normal_share_top_source_ip,1.0,1.0,0.0,Match,Section 3.6 S5 (all from 172.26.0.1)
+payload_normal_share_top_user_agent,0.97,0.9696,-0.0004,Match,Section 3.6 S5 (97.0%)
+payload_normal_share_404,0.997,0.9968,-0.0002,Match,Section 3.6 S5 (99.7%)
+S5_share_of_unique_normal_strings,0.331,0.3312,0.0002,Match,Section 3.6 S5 (33.1%)
+S6_conflicting_records,2171,2171,0,Match,"Section 3.6 S6, Table 4"
+S6_conflicting_strings,736,736,0,Match,Section 3.6 S6
+S6_leftover_duplicates,8,8,0,Match,"Section 3.6 S6, Table 4"
+final_records_with_body,15837,15837,0,Match,Section 3.6 S7 and S8
+final_normal_share_404,0.851,0.8509,-0.0001,Match,Section 3.6 S5 (85.1%)
+"S5 removed, OS command",22746,22746,0,Match,Section 3.6 S5
+"S5 removed, SQL",5807,5807,0,Match,Section 3.6 S5
+"S5 removed, Script injection",1506,1506,0,Match,Section 3.6 S5
+"S5 removed, Path traversal",70,70,0,Match,Section 3.6 S5
+"Raw records, column 000 - Normal",525195,525195,0,Match,Table 3
+"Raw records, column 272 - Protocol Manipulation",9153,9153,0,Match,Table 3
+"Raw records, column 274 - HTTP Verb Tampering",5437,5437,0,Match,Table 3
+"Raw records, column 126 - Path Traversal",20992,20992,0,Match,Table 3
+"Raw records, column 66 - SQL Injection",250311,250311,0,Match,Table 3
+"Raw records, column 310 - Scanning for Vulnerable Software",2718,2718,0,Match,Table 3
+"Raw records, column 88 - OS Command Injection",7482,7482,0,Match,Table 3
+"Raw records, column 242 - Code Injection",15827,15827,0,Match,Table 3
+"Raw records, column 194 - Fake the Source of Data",56145,56145,0,Match,Table 3
+"Raw records, column 34 - HTTP Response Splitting",19738,19738,0,Match,Table 3
+"Raw records, column 16 - Dictionary-based Password Attack",1847,1847,0,Match,Table 3
+"Raw records, column 153 - Input Data Manipulation",2272,2272,0,Match,Table 3
+"Raw records, column 248 - Command Injection",1,1,0,Match,Table 3
+"Raw records, column 33 - HTTP Request Smuggling",1059,1059,0,Match,Table 3
+Number of classes,9,9,0,Match,"Section 3.2, Table 3"
+"Final records, Normal",52000,52000,0,Match,Table 3
+"Final records, HTTP Protocol Manipulation",8093,8093,0,Match,Table 3
+"Final records, Path Traversal",11569,11569,0,Match,Table 3
+"Final records, SQL Injection",42000,42000,0,Match,Table 3
+"Final records, Scanning for Vulnerable Software",2360,2360,0,Match,Table 3
+"Final records, OS Command Injection",5936,5936,0,Match,Table 3
+"Final records, Code Injection",11658,11658,0,Match,Table 3
+"Final records, Fake the Source of Data",43468,43468,0,Match,Table 3
+"Final records, HTTP Response Splitting",18799,18799,0,Match,Table 3
+"Test records, Normal",7800,7800,0,Match,Table 3
+"Test records, HTTP Protocol Manipulation",1214,1214,0,Match,Table 3
+"Test records, Path Traversal",1735,1735,0,Match,Table 3
+"Test records, SQL Injection",6300,6300,0,Match,Table 3
+"Test records, Scanning for Vulnerable Software",354,354,0,Match,Table 3
+"Test records, OS Command Injection",891,891,0,Match,Table 3
+"Test records, Code Injection",1749,1749,0,Match,Table 3
+"Test records, Fake the Source of Data",6520,6520,0,Match,Table 3
+"Test records, HTTP Response Splitting",2820,2820,0,Match,Table 3
+"Partition size, train",141525,141525,0,Match,"Table 4 S8, Table 5, Section 3.6"
+"Partition size, val",24975,24975,0,Match,"Table 4 S8, Table 5, Section 3.6"
+"Partition size, test",29383,29383,0,Match,"Table 4 S8, Table 5, Section 3.6"
+Total records in all partitions,195883,195883,0,Match,Table 4

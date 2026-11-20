@@ -1,0 +1,10 @@
+stage,rule,records_after,removed
+S0,Raw SR-BH 2020 records,907815,
+S1,"Drop records whose sole labels are excluded (CAPEC 16, 153, 248, 33)",905506,2309.0
+S2,Build the input string: method + URL path and query + body,905506,0.0
+S3,"Merge exact duplicates of (input string, full label vector)",378051,527455.0
+S4,"Single label: first retained CAPEC column in file order, 274 merged into 272",378051,0.0
+S5,Label-noise filter: drop Normal records carrying an attack payload,347922,30129.0
+S6,Drop strings with conflicting labels (2171) and leftover duplicates (8),345743,2179.0
+S7,"Random cap: Normal 52,000, SQL Injection 42,000 (seed 42)",195883,149860.0
+S8,"Stratified split (seed 42): train 141525, validation 24975, test 29383",195883,0.0

@@ -1,0 +1,11 @@
+class,train,val,test,total
+Normal,37570,6630,7800,52000
+HTTP Protocol Manipulation,5847,1032,1214,8093
+Path Traversal,8359,1475,1735,11569
+SQL Injection,30345,5355,6300,42000
+Scanning for Vulnerable Software,1705,301,354,2360
+OS Command Injection,4288,757,891,5936
+Code Injection,8423,1486,1749,11658
+Fake the Source of Data,31406,5542,6520,43468
+HTTP Response Splitting,13582,2397,2820,18799
+Total,141525,24975,29383,195883

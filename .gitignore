@@ -1,0 +1,19 @@
+# raw and generated data (request text is not redistributed)
+data/raw/*
+!data/raw/README.md
+data/processed/*
+!data/processed/.gitkeep
+outputs/audit/*
+!outputs/audit/.gitkeep
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+*.part
+# editors and OS
+.DS_Store
+.idea/
+.vscode/
