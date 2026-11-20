@@ -1,6 +1,6 @@
 # SC-SecMHAD preprocessing: SR-BH 2020 benchmark rebuild
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24396092.svg)](https://doi.org/10.5281/zenodo.24396092)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24399578.svg)](https://doi.org/10.5281/zenodo.24399578)
 
 This repository rebuilds the nine-class SR-BH 2020 benchmark used in
 
@@ -306,8 +306,8 @@ published partition IDs exactly.
 If you use this code or the partition IDs, cite the paper above and this software:
 
 > E. Abotsi, O. Kornyo, S. Alhassan, S. A. Muntaka, A. R. Owusu, J. M. Mensah, M. Asante.
-> SC-SecMHAD preprocessing: SR-BH 2020 benchmark rebuild (v1.0.0) [software]. Zenodo, 2026.
-> <https://doi.org/10.5281/zenodo.24396092>
+> SC-SecMHAD preprocessing: SR-BH 2020 benchmark rebuild (v1.0.1) [software]. Zenodo, 2026.
+> <https://doi.org/10.5281/zenodo.24399578>
 
 Citation metadata is also in `CITATION.cff`. Cite the dataset as:
 

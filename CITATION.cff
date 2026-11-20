@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: "If you use this software or its partition IDs, please cite it and the associated paper."
 title: "SC-SecMHAD preprocessing: SR-BH 2020 benchmark rebuild"
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-11-20
 license: MIT
 type: software
-doi: 10.5281/zenodo.24396092
+doi: 10.5281/zenodo.24399578
 repository-code: "https://github.com/ephraimabotsi/SC-SecMHAD-preprocessing"
-url: "https://doi.org/10.5281/zenodo.24396092"
+url: "https://doi.org/10.5281/zenodo.24399578"
 authors:
   - family-names: Abotsi
     given-names: Ephraim
