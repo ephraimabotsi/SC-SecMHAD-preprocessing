@@ -14,7 +14,7 @@ publishes the partition IDs that fix which raw record sits in which partition. O
 every stage, writes every statistic of Section 3.6, Table 3 and Table 4, and compares each one
 with the value printed in the paper.
 
-**Status of this release (v1.0.0):** all 69 dataset statistics reported in the paper are reproduced
+**Status of this release (v1.0.1):** all 69 dataset statistics reported in the paper are reproduced
 exactly, and the generated partitions are record-for-record identical, in the same order, to the
 partitions used to train and evaluate the models in the paper.
 
@@ -268,7 +268,7 @@ To run the audit:
   paper's trained models.
 * The `--from-partitions` mode gives the same three files without any random step.
 
-Checksums of the generated files (v1.0.0, scikit-learn 1.9.1, pandas 3.0.5):
+Checksums of the generated files (v1.0.1, scikit-learn 1.9.1, pandas 3.0.5):
 
 | File | MD5 |
 |---|---|

@@ -1,4 +1,4 @@
-# Quality assurance report, release v1.0.0
+# Quality assurance report, release v1.0.1
 
 Date: 2026-11-20. Environment: Python 3.13.18, pandas 3.0.5, NumPy 2.5.3, scikit-learn 1.9.1, Linux.
 Raw input: `data_capec_multilabel.csv`, MD5 `173ec515308bdce5aec19cfd5b792596`, 907,815 records.
